@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Weibo</title>
+		<link type="text/css" rel="stylesheet" media="all" href="../../static/css/login.css">
+	 	<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<div class="blogLogin">
+			<form method="post" id="vForm" name="vForm" action="">
+				<div class="blogLogin_main">
+					<h2>博客登录</h2>
+					<table >
+						<tbody>
+							<tr>
+								<th scope="row">登录名：</th>
+								<td>
+									<input class="loginInput" autocomplete="off" id="username" name="username" tabindex="1" maxlength="64" alt="登录名:无内容/长度{4-64}/errArea{usernameErr}" value="" type="text">&nbsp;&nbsp;
+									<a href="/account/register/">注册博客</a>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">密&nbsp;&nbsp;&nbsp;码：</th>
+								<td >
+									<input class="loginInput" id="password" name="password" tabindex="2" maxlength="32" alt="密码:无内容/errArea{passwordErr}" value="" type="password">&nbsp;&nbsp;
+									<a href="https://login.sina.com.cn/getpass.html">找回密码</a> 
+
+                                    {% if errorMsg %}
+									    <p class="loginErr" id="usernameErr">请输入登录名或密码</p>
+                                    {% endif %}
+								</td>
+							</tr>
+							
+							<tr>
+								<th scope="row"></th>
+								<td>
+									<p class="loginCheck">
+										<label for="savestate"><input id="savestate" tabindex="3" name="savestate" onclick="" type="checkbox">记住登录状态</label>								
+									</p>
+								</td>
+							</tr>
+
+							<tr>
+								<th scope="row"></th>
+								<td><input value="登录" class="btn_submit" tabindex="5" type="submit" ></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="clearit"></div>
+			</form>
+		</div>
+	</body>
+	<script type="text/javascript">
+{#		$(function(){#}
+{#			$("#username").blur(function(){#}
+{#				if ($(this).val() == ""){#}
+{#					$("#usernameErr").show();	#}
+{#				}#}
+{#			})#}
+{##}
+{#			$("#password").blur(function(){#}
+{#				if ($(this).val() == ""){#}
+{#					$("#passwordErr").show();	#}
+{#				}#}
+{#			})#}
+{##}
+{#			$(".btn_submit").click(function(){#}
+{#				window.location.href = "/login/";#}
+{#			})#}
+{##}
+{#			#}
+{#			$("#vForm").submit(function(){#}
+{#				$(this).serialize();#}
+{#				return false;#}
+{#			})#}
+{#		})#}
+	</script>
+</html>

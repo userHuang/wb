@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Weibo</title>
+        <link type="text/css" rel="stylesheet" media="all" href="../../static/css/register.css">
+        <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+
+    </head>
+
+    <body>
+        <div class="reg_main clearfix">
+            <div class="showcolor"></div>
+            <div class="main_title">
+                <div class="main_tab">
+                    <a  class="current" id="phone-register">手机注册</a>
+                    <a class=""  id="mail-register">邮箱注册</a>
+                </div>
+            </div>
+
+            <div class="reg_info clearfix">
+                <!--录入信息边栏-->
+                <div class="reg_aside">
+                    <p class="have_ac">已有帐号，<a href="/account/login/">直接登录 &gt;&gt;</a></p>
+                </div>
+                <!--/录入信息边栏-->
+                <!--录入信息-->
+                <div style="display: block;" class="reg_form reg_mobile" id="phone">
+                    <form id="phone-form"  method="post" action="/account/register/"name="signup">
+                        <div class="info_list clearfix">
+                            <div class="tit">
+                                <i>*</i>手机号码：
+                            </div>
+                            <div class="ipt">
+                                <input class="reg_ipt" name="username" maxlength="11" value="" node-type="field-mobile" type="text">
+                            </div>
+                            <div class="tips" node-type="field-mobile-tip"><p class="erro"><span class="icon_del"></span>请输入手机号码</p></div>
+                        </div>
+
+                        <div class="info_list clearfix">
+                            <div class="tit">
+                                <i>*</i>设置密码：
+                            </div>
+                            <div class="ipt">
+                                <input class="reg_ipt" name="password" maxlength="16" value="" node-type="field-password" type="password">
+                            </div>
+
+                            <div class="info_submit">
+                                 <input class="reg_ipt"   value="立即注册" node-type="field-password" type="submit">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+         </div>
+    </body>
+
+    <script type="text/javascript">
+{#        $("#phone-register").click(function(){#}
+{#            $(".reg_mobile").show();#}
+{#            $(".reg_mail").hide();#}
+{##}
+{#        })#}
+{##}
+{#        $("#mail-register").click(function(){#}
+{#            $(".reg_mail").show();#}
+{#            $(".reg_mobile").hide();#}
+{#        })#}
+{##}
+{#        $(".reg_ipt").blur(function(){#}
+{#            if ($(this).val() == ""){#}
+{#                $(".erro").show();#}
+{#            }#}
+{#        })#}
+    </script>
+</html>

@@ -1,0 +1,65 @@
+body {
+	background-image: url("https://login.sina.com.cn/images/register/reg_bg.jpg");
+	background-repeat: repeat-x;
+	background-attachment: scroll;
+	background-position: 0px top;
+	background-clip: border-box;
+	background-origin: padding-box;
+	background-size: auto auto;
+	background-color: #DCEAF5;
+}
+
+.blogLogin {
+	margin: 0 auto;
+	position: relative;
+	margin: 0px auto;
+	position: relative;
+	width: 500px;
+	border: 1px solid rgba(59, 170, 146, 0.66);
+	height: 4;
+	margin-top: 100px;
+	padding-left: 50px;
+	background-color: #fff;
+	border-radius: 5px;
+}
+
+table {
+	border: 0;
+	cellpadding: 0;
+	cellspacing: 0;
+}
+
+th {
+	padding-bottom: 5px;
+}
+
+td {
+	height:46px;
+	padding-bottom: 5px;
+}
+
+.loginErr {
+	height: 16px;
+	line-height: 16px;
+	position: absolute;
+	margin-top: 10px;
+	font-size: 12px;
+	color: red;
+}
+
+.btn_submit {
+	width: 80px;
+	font-size: 20px;
+}
+
+.btn_submit:hover {
+	cursor: pointer;
+}
+
+.loginInput {
+	border: 1px solid rgba(59, 170, 146, 0.66);
+}
+
+table td a {
+	text-decoration: none;
+}

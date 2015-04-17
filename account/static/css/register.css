@@ -1,0 +1,108 @@
+body {
+	background-image: url("https://login.sina.com.cn/images/register/reg_bg.jpg");
+	background-repeat: repeat-x;
+	background-attachment: scroll;
+	background-position: 0px top;
+	background-clip: border-box;
+	background-origin: padding-box;
+	background-size: auto auto;
+	background-color: #DCEAF5;
+}
+
+.reg_main {
+	margin: 0 auto;
+	width: 800px;
+	margin-top: 100px;
+	background-color: #fff;
+	height: 400px;
+	padding: 20px;
+}
+
+.info_list {
+	position: relative;
+	margin-top: 20px;
+}
+
+.ipt {
+	position: absolute;
+	left: 80px;
+	top: 0px;
+	width: 300px;
+}
+
+.ipt span {
+	margin-left: 40px;
+	border: 1px solid rgb(204, 204, 204);
+	font-size: 12px;
+	color: #186F8C;
+}
+
+.tips {
+	margin-top: 40px;
+
+}
+
+.tit i {
+	color: red;
+}
+
+.erro, .suggest {
+	position: absolute;
+	left: 250px;
+	top: 0px;
+	margin-top: 0px;
+	font-size: 12px;
+	color: red;
+	display: none;
+}
+
+div a {
+	text-decoration: none;
+	color: #186F8C;
+}
+
+.reg_aside {
+	float: right;
+	padding-right: 80px;
+	border-left: 1px solid red;
+}
+
+.reg_ipt {
+	border: 1px solid rgba(59, 170, 146, 0.66);
+}
+
+.main_tab a {
+	margin-right: 12px;
+	border: 1px solid #D9D9D9;
+	padding: 0px 35px;
+	line-height: 38px;
+	position: relative;
+	padding: 10px;
+}
+
+.main_tab a:visited{
+	color: #0A8CD2;
+}
+
+.main_tab a:hover{
+	background-color: #0A8CD2;
+	color: #fff;
+	cursor: pointer;
+}
+
+.info_submit input {
+	margin: 20px 0px;
+    font-size: 18px;
+    top: 20px;
+    border: 1px solid rgb(29, 158, 200);
+	color: rgb(104, 17, 17);
+	font-weight: bold;
+    padding: 0px;
+    border-radius: 5px;
+}
+
+.info_submit input:hover {
+	background-color: #0A8CD2;
+	color: #fff;
+	cursor: pointer;
+}

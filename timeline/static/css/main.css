@@ -1,0 +1,294 @@
+body {
+    background: url("http://imgcache.qq.com/club/item/weibo/skin/6/1146/bg.jpg");
+    background-attachment: fixed;
+}
+
+#header {
+	width: 960px;
+	margin: 0px auto;
+	position: relative;
+	z-index: 104;
+	height: 35px;
+
+}
+
+#content {
+	width: auto;
+	height: auto;
+	margin-top: 40px;
+}
+
+.main {
+	float: left;
+	position: relative;
+	width: 640px;
+	min-height: 900px;
+	z-index: 1;
+	overflow-y: visible;
+	margin-right: -1px;
+	border-right: 1px solid #BBDAE3;
+	border-radius: 5px 0px 0px 5px;
+	background: none repeat scroll 0% 0% #FFF;
+	height: 600px;
+	margin: 5px;
+	left: 265px;
+	clear: both;
+}
+
+#slide {
+	float: right;
+	padding-bottom: 30px;
+	width: 319px;
+	height: 600px;
+	margin: 5px;
+	right: 265px;
+	position: relative;
+	background-color: rgba(171, 228, 218, 0.4);
+
+}
+
+.talkBox {
+	margin: 0 20px;
+}
+
+.talkBox div{
+	font: 16px/31px "MicroSoft YaHei","SimHei";
+	color: #999;
+}
+
+.writeBox {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	background-color: #FFF;
+	border-radius: 5px;
+	width: 579px;
+	height: 74px;
+	border: 1px solid #439598;
+	resize: none;
+}
+
+.blog {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	background-color: #FFF;
+	border-radius: 3px 3px 0px 0px;
+	width: 579px;
+	height: auto;
+	resize: none;
+	margin: 20px 0;
+    margin: 20px 0;
+}
+
+.pubInfo {
+	position: relative;
+	left: 400px;
+}
+
+.funbox a {
+	text-decoration: none;
+}
+
+.blog_content {
+	width: 400px;
+	height: 100px;
+	border: 1px solid #F00;
+	position: relative;
+	left: 80px;
+}
+
+.comment {
+	position: relative;
+	left: 100px;
+    display: none;
+}
+
+.identiInfo {
+	width: 240px;
+	height: 80px;
+	margin: 10px;
+}
+
+.sendFun{
+	height: 30px;
+}
+
+.sendFun input {
+	color: rgb(255, 255, 255);
+	line-height: 33px;
+	overflow: visible;
+	background-position: 0px 0px;
+	width: 80px;
+	border: 0px none;
+	cursor: pointer;
+	background-color: rgba(56, 176, 58, 0.65);
+	font-size: 18px;
+	border-radius: 5px;
+	height: 25px;
+	line-height: 25px;
+}
+
+.sendFun input:hover {
+	cursor: pointer;
+}
+
+.title {
+	margin: 0px;
+	padding: 0px;
+	font-size: 24px;
+	line-height: 35px;
+	color: #FFF
+}
+
+.home_page {
+	position: absolute;
+	left: 134px;
+	top: 0px;
+	height: 35px;
+}
+
+.home_page a{
+	text-decoration: none;
+	font-size: 16px;
+	float: left;
+	line-height: 35px;
+	overflow: hidden;
+	color: #FFF;
+	margin: 0px 20px;
+}
+
+.home_page_current a {
+	background-color: #090707;
+}
+
+.home_page a:hover {
+	background-color: #090707;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+.headShadow {
+	height: 35px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	opacity: 0.88;
+	z-index: 10;
+	background-image: linear-gradient(to bottom, #2C2C2C, #191919);
+}
+
+#newMsgBox {
+	position: absolute;
+	top: 0px;
+	left: 634px;
+	line-height: 5px;
+}
+
+#newMsgBox li {
+	list-style-type: none;
+	float: left;
+	display: block;
+}
+
+.qk_nav_item .t {
+	background: url("http://mat1.gtimg.com/www/mb/img/head/icons_20130704.png") no-repeat scroll 0% 0% transparent;
+}
+
+.topNav .topNavItem {
+	float: left;
+	position: relative;
+	margin-right: 1px;
+}
+
+.qk_nav_item a {
+	position: relative;
+	padding: 0px;
+	width: 36px;
+	height: 35px;
+	cursor: pointer;
+}
+
+.headInside .right {
+    left: auto;
+    right: 165px;
+}
+
+.right {
+    float: right;
+}
+
+.topNav .topNavItem a i {
+	position: absolute;
+	display: block;
+	height: 35px;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+}
+
+.qk_nav_item .t {
+    display: block;
+    position: absolute;
+    top: 7px;
+    left: 8px;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+
+.list_item {
+	list-style-type: none;
+	margin: 10px 0;
+	position: relative;
+	right: 30px;
+	width: 80px;
+	float: left;
+}
+
+.list_item:hover{
+	cursor: pointer;
+}
+
+.int_like:hover{
+	cursor: pointer;
+}
+
+.name {
+	position: absolute;
+	top: 10px;
+	left: 100px;
+	font-family: inherit;
+	font-size: 20px;
+}
+
+.search_input {
+	float: right;
+	position: absolute;
+	top: 5px;
+	right: 70px;
+}
+
+.search_input_value {
+	float: right;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	color: #000;
+}
+
+.sendBtn {
+	font-size: 12px;
+	display: block;
+	position: relative;
+	left: 220px;
+}
+
+.comment_content {
+	border: 1px solid blue;
+	resize: none;
+	width: 220px;
+}

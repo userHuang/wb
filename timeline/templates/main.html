@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Weibo</title>
+        <link type="text/css" rel="stylesheet" href="/static/css/main.css">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <!--确保适当的绘制和触屏缩放*/-->
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <meta content="" name="description">
+        <meta content="" name="author">
+        <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+        <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+        <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+        <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+        <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+
+        <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+        <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+        <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    </head>
+
+    <body>
+
+    	<div class="headShadow">   
+            <div id="header">
+                <div class="title">纳容微博</div>
+
+                <div class="home_page">
+                    <a href="main.html" class="nevigation">首页</a>
+                    <a href="main.html" class="nevigation">个人信息</a>
+                    <a href="main.html" class="nevigation">好友</a>
+                </div>
+
+                <div  class="home-search">
+                    <input class="search_input" type="text" />
+                    <input type="button" class="search_input_value" value="Search" />
+                </div>
+            </div>
+        </div>
+
+    	<div id="content">
+    		<div class="main">
+    			<form class="talkBox">
+    				<div>说说你在做什么，想什么</div>
+    				<textarea class="writeBox" name="blog_content"></textarea>
+                    <div class="sendFun">
+                        <input type="button" value="发 表" id="add_blog" onclick="sendblog()"/>
+                    </div> 
+    			</form>
+
+    			<div class="homebanner">
+                    {% for blog in blog_list %}
+                        <div class="blog">blog1
+                            <div class="blog_content">这是blog1{{ blog.blog_content }}</div>
+
+                            <div class="pubInfo">
+                                <div class="funbox">
+                                    <a class="int_like">转播
+                                        <span>(12)</span>
+                                    </a>
+                                    <a class="int_like">评论
+                                        <span>(20)</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        <form class="comment" >评论1
+                            <textarea class="comment_content" name="comment_content"></textarea>
+                            <input class="sendBtn" type="button" value="评论" onclick="discuss()"/>
+                        </form>
+                    </div>
+                {% endfor %}
+
+                    <div class="blog">blog2
+                        <div class="blog_content">这是blog2</div>
+
+                        <div class="pubInfo">
+                            <div class="funbox">
+                                <a class="int_like">转播
+                                    <span>(2)</span>
+                                </a>
+                                <a  class="int_like">评论
+                                    <span>(10)</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="comment" >评论2</div>
+                    </div>
+                </div>
+    		</div>
+
+    		<div id="slide">
+    			<div class="role">
+                    <div class="identiInfo">
+                        <img src="http://t0.qlogo.cn/mbloghead/ae15ada266487eafa424/100" alt="Responsive image" style="width:80px" class="img-responsive" /> 
+                        <span class="name"> name</span>
+                    </div>
+
+                    <ul class="list clear  ">
+                        <li class="list_item item_prose"> <a class="stat" boss="btnWideSideMyBroadcasts">
+                            <span class="text_count" id="talkNum" style="">285</span>
+                            <span class="text_atr">广播</span></a><b class="mo_bg foFun"></b>
+                        </li>
+
+                        <li class="list_item item_follow"><a class="stat" boss="btnWideSideMyFollows">
+                            <span class="text_count" style="margin-left:-2px;">112</span>
+                            <span class="text_atr">收听</span></a><b class="mo_bg foFun"></b>
+                        </li>
+
+                        <li class="list_item item_fans"><a href="http://t.qq.com/zh1314520117/follower" class="stat" boss="btnWideSideMyFollowers">
+                            <span class="text_count" style="margin-left:-2px;">130</span>
+                            <span class="text_atr">听众</span></a><b class="mo_bg foFun"></b>
+                        </li>
+                    </ul>
+    			</div>
+
+                <div class="hotTalk">
+
+                </div>
+    		</div>
+    	</div>
+
+        <script src="/static/send.js"></script>
+        <script src="/static/comment.js"></script>
+    </body>
+</html>
