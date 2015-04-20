@@ -9,13 +9,16 @@ from timeline.models import Blogs
 def send_blog(request):
 	print request.user
 	if request.POST:
-		owner = request.user # 获取当前用户名
+		owner = request.user # 获取当前用户
 		blog_content = request.POST.get('blog_content') # 获取发布微博内容
+		blog_username = owner.username # 获取用户名
+
 		creat_at = datetime.now()
 		Blogs.objects.create(
-			user=owner,
-			blog_content=blog_content,
-			blog_creat_at=creat_at
+			user = owner,
+			blog_content = blog_content,
+			blog_creat_at = creat_at,
+			blog_username = blog_username
 		)
 		return HttpResponse('200')
 	elif request.GET:

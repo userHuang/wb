@@ -6,11 +6,11 @@ $(".int_like").click(function () {
     $(this).parent().parent().next().toggle();
 })
 
-function discuss(){
+function discuss(obj){
     $.ajax({
         url: '/comment/sendcomment/',
         type: 'POST',
-        data: $('.comment').serialize(),
+        data: $(obj).parent().serialize(),
         success: function (r) {
             console.log(r);
             if (r == '200') {

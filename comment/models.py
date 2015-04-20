@@ -7,7 +7,7 @@ from timeline.models import Blogs
 
 
 class Discuss(models.Model):
-	comment_id = ForeignKey(Blogs)
+	comment = ForeignKey(Blogs) #实例
 	comment_content = models.CharField(max_length=1024)
 	comment_creat_at = models.DateTimeField(auto_now_add=True)
 	comment_user = models.CharField(max_length=256)

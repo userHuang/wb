@@ -29,7 +29,6 @@ body {
 	border-right: 1px solid #BBDAE3;
 	border-radius: 5px 0px 0px 5px;
 	background: none repeat scroll 0% 0% #FFF;
-	height: 600px;
 	margin: 5px;
 	left: 265px;
 	clear: both;
@@ -83,7 +82,8 @@ body {
 
 .pubInfo {
 	position: relative;
-	left: 400px;
+	left: 450px;
+    margin: 10px 0;
 }
 
 .funbox a {
@@ -91,11 +91,11 @@ body {
 }
 
 .blog_content {
-	width: 400px;
+	max-width: 530px;
 	height: 100px;
-	border: 1px solid #F00;
+	border: 1px solid #00FFD2;
 	position: relative;
-	left: 80px;
+	left: 40px;
 }
 
 .comment {
@@ -291,4 +291,13 @@ body {
 	border: 1px solid blue;
 	resize: none;
 	width: 220px;
+}
+
+.comment_list {
+    max-width: 530px;
+    height: auto;
+    border: 1px solid rgba(2, 1, 1, 0.81);
+    position: relative;
+    left: 40px;
+    margin: 10px 0;
 }

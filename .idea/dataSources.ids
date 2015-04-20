@@ -9,8 +9,14 @@
     <schema name="" catalog="wb"/>
     <table name="account_customer" schema="" catalog="wb" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="creat_at" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="owner_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="adress" sqlType="VARCHAR" precision="150" scale="0" nullable="false" jdbcType="12"/>
+      <column name="tel" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
       <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="owner_id_refs_id_58fb4e8e" columns="owner_id" ref-table="auth_user" ref-schema="" ref-catalog="wb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="account_customer_cb902d83" unique="false" columns="owner_id"/>
     </table>
     <table name="auth_group" schema="" catalog="wb" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -56,6 +62,7 @@
       <column name="is_active" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
       <column name="date_joined" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
       <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="owner_id_refs_id_58fb4e8e" table="account_customer" schema="" catalog="wb" columns="owner_id"/>
       <exported-key name="user_id_refs_id_40c41112" table="auth_user_groups" schema="" catalog="wb" columns="user_id"/>
       <exported-key name="user_id_refs_id_4dc23c39" table="auth_user_user_permissions" schema="" catalog="wb" columns="user_id"/>
       <exported-key name="user_id_refs_id_c0d12874" table="django_admin_log" schema="" catalog="wb" columns="user_id"/>
@@ -67,8 +74,8 @@
       <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="group_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="group_id_refs_id_274b862c" columns="group_id" ref-table="auth_group" ref-schema="" ref-catalog="wb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="user_id_refs_id_40c41112" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="wb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="group_id_refs_id_274b862c" columns="group_id" ref-table="auth_group" ref-schema="" ref-catalog="wb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="user_id" unique="true" columns="group_id"/>
       <index name="auth_user_groups_5f412f9a" unique="false" columns="group_id"/>
       <index name="auth_user_groups_6340c63c" unique="false" columns="user_id"/>
@@ -78,11 +85,21 @@
       <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="permission_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="permission_id_refs_id_35d9ac25" columns="permission_id" ref-table="auth_permission" ref-schema="" ref-catalog="wb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="user_id_refs_id_4dc23c39" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="wb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="permission_id_refs_id_35d9ac25" columns="permission_id" ref-table="auth_permission" ref-schema="" ref-catalog="wb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="user_id" unique="true" columns="permission_id"/>
       <index name="auth_user_user_permissions_6340c63c" unique="false" columns="user_id"/>
       <index name="auth_user_user_permissions_83d7f98b" unique="false" columns="permission_id"/>
+    </table>
+    <table name="comment_discuss" schema="" catalog="wb" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="comment_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="comment_content" sqlType="VARCHAR" precision="1024" scale="0" nullable="false" jdbcType="12"/>
+      <column name="comment_creat_at" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="comment_user" sqlType="VARCHAR" precision="256" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="comment_id_refs_id_b2ed249b" columns="comment_id" ref-table="timeline_blogs" ref-schema="" ref-catalog="wb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="comment_discuss_3925f323" unique="false" columns="comment_id"/>
     </table>
     <table name="django_admin_log" schema="" catalog="wb" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -122,8 +139,10 @@
       <column name="title" sqlType="VARCHAR" precision="256" scale="0" nullable="false" jdbcType="12"/>
       <column name="blog_content" sqlType="VARCHAR" precision="1024" scale="0" nullable="false" jdbcType="12"/>
       <column name="blog_creat_at" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="blog_username" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="user_id_refs_id_0fbddb3d" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="wb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="comment_id_refs_id_b2ed249b" table="comment_discuss" schema="" catalog="wb" columns="comment_id"/>
       <index name="timeline_blogs_6340c63c" unique="false" columns="user_id"/>
     </table>
   </data-source>

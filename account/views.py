@@ -9,15 +9,15 @@ from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.shortcuts import render_to_response, render
 from django.contrib.auth.models import User
+from comment.models import Discuss
 from django.contrib import auth
 from django.db.models import Q
 from models import *
-
+from timeline.models import Blogs
 
 # ===============================================================================
 # login : 登录
-#===============================================================================
-from timeline.models import Blogs
+# ===============================================================================
 
 
 def login(request):
@@ -43,14 +43,26 @@ def login(request):
 
 
 def account_main(request):
-	owner = request.user # 获取当期用户名
-	user = User.objects.get(username=owner) # 当前用户id
-	blog_list = Blogs.objects.filter(user=user)
-	c = RequestContext(request, {
-		'blog_list': blog_list
-	})
-	return render_to_response('main.html', c)
+	# blog_list = Blogs.objects.filter(user=owner)
+	# blog_list_pack = []
+	# for item in range(len(blog_list)):
+	# 	timeline = blog_list[item]
+	# 	comment_dic = Blogs.objects.filter(user = timeline)
+	# 	blog_list_pack.append([timeline, comment_dic])
+	owner = request.user  #
 
+	# user = User.objects.get(username=owner)  # 当前用户
+	user = User.objects.all()  # 所有用户
+	blog_list = Blogs.objects.filter(user=user)  # 微博列表
+
+	for one_blog in blog_list:
+		one_blog.discuss_list = Discuss.objects.filter(comment=one_blog)
+
+	c = RequestContext(request, {
+		'blog_list': blog_list,
+	})
+
+	return render_to_response('main.html', c)
 
 
 #===============================================================================
